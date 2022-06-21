@@ -7,7 +7,9 @@ namespace Data.Models.Equipment
     {
         public decimal PricePerDay { get; set; }
 
-        public string Name { get; set; } = string.Empty;
+        public Make Make { get; set; } = new();
+
+        public string Model { get; set; } = string.Empty;
 
         public double MaxRotationSpeed { get; set; }
 
@@ -17,7 +19,7 @@ namespace Data.Models.Equipment
 
         public override string ToString()
         {
-            return $"Screw driver {Name}{Environment.NewLine}" +
+            return $"Screw driver {Make} {Model}{Environment.NewLine}" +
                 $"Max rotation speed: {MaxRotationSpeed:F2} rounds/minute{Environment.NewLine}" +
                 $"Power: {Power} W";
         }

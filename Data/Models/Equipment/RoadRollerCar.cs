@@ -7,7 +7,9 @@ namespace Data.Models.Equipment
     {
         public decimal PricePerDay { get; set; }
 
-        public string Name { get; set; } = string.Empty;
+        public Make Make { get; set; } = new();
+
+        public string Model { get; set; } = string.Empty;
 
         public Roller Roller { get; set; } = new Roller();
 
@@ -17,7 +19,7 @@ namespace Data.Models.Equipment
 
         public override string ToString()
         {
-            return $"Road roller car {Name}{Environment.NewLine}{Roller}{Environment.NewLine}" +
+            return $"Road roller car {Make} {Model}{Environment.NewLine}{Roller}{Environment.NewLine}" +
                 $"Max speed: {MaxSpeed:F2} km/h";
         }
     }

@@ -1,7 +1,7 @@
 ﻿using Business.Interfaces;
 using Data.Interfaces;
 
-namespace Business
+namespace Business.Other
 {
     public class PricingContext
     {
@@ -20,7 +20,7 @@ namespace Business
             _strategy = strategy ?? throw new ArgumentNullException(nameof(strategy));
         }
 
-        public decimal GetRentalCost(IEquipment equipment, TimeSpan time) 
+        public decimal GetRentalCost(IEquipment equipment, TimeSpan time)
             => _strategy.GetRentalPrice(equipment) * (decimal)time.TotalDays;
     }
 }

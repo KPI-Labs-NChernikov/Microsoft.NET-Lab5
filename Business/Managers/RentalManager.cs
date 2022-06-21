@@ -1,10 +1,11 @@
 ﻿using Business.Interfaces;
+using Business.Other;
 using Business.PricingStrategies;
 using Data.Interfaces;
 using Data.Models;
 using Data.Other;
 
-namespace Business
+namespace Business.Managers
 {
     public class RentalManager
     {

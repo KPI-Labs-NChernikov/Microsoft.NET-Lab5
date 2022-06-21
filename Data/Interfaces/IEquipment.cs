@@ -1,4 +1,5 @@
-﻿using Data.Other;
+﻿using Data.Models.Equipment;
+using Data.Other;
 
 namespace Data.Interfaces
 {
@@ -6,7 +7,9 @@ namespace Data.Interfaces
     {
         decimal PricePerDay { get; set; }
 
-        string Name { get; set; }
+        Make Make { get; set; }
+
+        string Model { get; set; }
 
         CoefficientContainer Coefficients { get; }
     }
