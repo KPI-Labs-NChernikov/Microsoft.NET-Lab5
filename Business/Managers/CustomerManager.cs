@@ -31,5 +31,10 @@ namespace Business.Managers
         {
             Context.Customers.Remove(Context.Customers.First(c => c.Id == id));
         }
+
+        public Customer? FindByPhoneNumber(string phoneNumber)
+        {
+            return Context.Customers.FirstOrDefault(c => c.PhoneNumber == phoneNumber);
+        }
     }
 }
