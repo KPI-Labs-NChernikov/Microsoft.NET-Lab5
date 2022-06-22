@@ -8,10 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Printers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Business\Business.csproj" />
     <ProjectReference Include="..\Data\Data.csproj" />
   </ItemGroup>

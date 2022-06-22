@@ -1,7 +1,4 @@
-﻿using Business.Managers;
-using Data;
-using Data.Other;
-using Data.Models;
+﻿using Data;
 using Presentation.Interfaces;
 using Data.Models.Equipment;
 
@@ -9,46 +6,17 @@ namespace Presentation.Data
 {
     public class DataSeeder : IDataSeeder
     {
-        public RentalContext Context { get; }
+        public Shop Shop { get; }
 
-        public DataSeeder(RentalContext context)
+        public DataSeeder(Shop shop)
         {
-            Context = context;
+            Shop = shop ?? throw new ArgumentNullException(nameof(shop));
         }
 
         public void SeedData()
         {
-            SeedCustomers();
-            SeedShop();
-        }
-
-        private void SeedCustomers()
-        {
-            var manager = new CustomerManager(Context);
-            var customer = new Customer
-            {
-                FirstName = "Petro",
-                LastName = "Petrenko",
-                PhoneNumber = "+380682777777",
-                Tariff = Tariff.Preferential,
-            };
-            customer.Roles.Add(Role.Admin);
-            manager.Add(customer, "admin111");
-            customer = new Customer
-            {
-                FirstName = "Ivan",
-                LastName = "Ivanov",
-                PhoneNumber = "+380682555555",
-                Tariff = Tariff.Standard
-            };
-            manager.Add(customer, "user1111");
-        }
-
-        private void SeedShop()
-        {
             var brand = new Make { Name = "SKIF" };
-            var shop = Context.Shop;
-            shop.ConcreteMixers = new List<ConcreteMixer>
+            Shop.ConcreteMixers = new List<ConcreteMixer>
             {
                 new ConcreteMixer
                 {
@@ -66,7 +34,7 @@ namespace Presentation.Data
                 },
             };
             brand = new Make { Name = "Forte" };
-            shop.ConcreteMixers.Add(new ConcreteMixer
+            Shop.ConcreteMixers.Add(new ConcreteMixer
             {
                 Make = brand,
                 Model = "EW7150",
@@ -74,7 +42,7 @@ namespace Presentation.Data
                 Volume = 150
             });
             brand = new Make { Name = "Road" };
-            shop.RoadRollerCars = new List<RoadRollerCar>
+            Shop.RoadRollerCars = new List<RoadRollerCar>
             {
                 new RoadRollerCar
                 {
@@ -102,7 +70,7 @@ namespace Presentation.Data
                 }
             };
             brand = new Make { Name = "BOSCH" };
-            shop.ScrewDrivers = new List<ScrewDriver>
+            Shop.ScrewDrivers = new List<ScrewDriver>
             {
                 new ScrewDriver
                 {
@@ -122,7 +90,7 @@ namespace Presentation.Data
                 }
             };
             brand = new Make { Name = "cayken" };
-            shop.ScrewDrivers.Add(new ScrewDriver
+            Shop.ScrewDrivers.Add(new ScrewDriver
             {
                 Make = brand,
                 Model = "17/80",

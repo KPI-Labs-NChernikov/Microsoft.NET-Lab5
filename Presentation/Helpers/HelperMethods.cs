@@ -31,7 +31,7 @@
 
         internal static string GetHeader(string subtype)
         {
-            return $"22. Rent of the equipment: {subtype}{Environment.NewLine}" +
+            return $"22. Rental calculator: Demo | {subtype}{Environment.NewLine}" +
                     "Nikita Chernikov, IS-02";
         }
     }

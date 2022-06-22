@@ -4,7 +4,7 @@ namespace Presentation.Interfaces
 {
     public interface IDataSeeder
     {
-        RentalContext Context { get; }
+        Shop Shop { get; }
 
         void SeedData();
     }
