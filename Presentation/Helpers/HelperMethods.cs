@@ -13,22 +13,6 @@
             Console.WriteLine($"{header}{Environment.NewLine}");
         }
 
-        public static void PrintErrorMessage(string? excMessage)
-        {
-            var initialColor = Console.ForegroundColor;
-            Console.ForegroundColor = ConsoleColor.DarkRed;
-            excMessage = string.IsNullOrEmpty(excMessage) ? "Ooops, unknown error occured..."
-                : $"An error occured: {excMessage}";
-            Console.WriteLine(excMessage);
-            Console.ForegroundColor = initialColor;
-        }
-
-        public static string? Search(string toFind)
-        {
-            Console.WriteLine($"Please, enter the {toFind}: ");
-            return Console.ReadLine();
-        }
-
         internal static string GetHeader(string subtype)
         {
             return $"22. Rental calculator: Demo | {subtype}{Environment.NewLine}" +

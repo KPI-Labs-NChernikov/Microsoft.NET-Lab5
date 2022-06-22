@@ -17,7 +17,7 @@ namespace Data.Models.Equipment
 
         public override string ToString()
         {
-            return $"Concrete mixer {Make} {Model}{Environment.NewLine}Volume: {Volume:F2} litres{Environment.NewLine}";
+            return $"Concrete mixer {Make} {Model}{Environment.NewLine}Volume: {Volume:F2} litres";
         }
     }
 }

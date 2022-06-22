@@ -17,7 +17,8 @@ printer.ChangeLastName();
 printer.ChangePhoneNumber();
 printer.ChangeTariff();
 Console.WriteLine($"Congratulations, {customer.FullName}");
-Console.WriteLine($"You have been successfully registered with the tariff \"{customer.Tariff}\"");
+Console.WriteLine($"You have been successfully registered with the tariff \"{customer.Tariff}\" " +
+    $"and phone number {customer.PhoneNumber}");
 HelperMethods.Continue();
 var mainMenu = new Menu
 {
@@ -30,7 +31,7 @@ var mainMenu = new Menu
         new MenuItem {Text = "Edit profile",
             Action = () => { printer.Print(); } },
         new MenuItem {Text = "To shop",
-            Action = () => { var shopPrinter = new ShopPrinter(shop); shopPrinter.Print(); } },
+            Action = () => { var shopPrinter = new ShopPrinter(shop, customer); shopPrinter.Print(); } },
     }
 };
 mainMenu.Print();
